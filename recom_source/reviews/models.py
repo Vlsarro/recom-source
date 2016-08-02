@@ -11,7 +11,7 @@ class Wine(models.Model):
         Returns average score for a given wine, based on all the
         reviews associated with it
         """
-        all_ratings = map(lambda  x: x.rating, self.review_set.all())
+        all_ratings = list(map(lambda x: x.rating, self.review_set.all()))
         return np.mean(all_ratings)
 
     def __str__(self):
