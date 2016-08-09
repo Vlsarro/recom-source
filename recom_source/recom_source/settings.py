@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap3',
     'reviews',
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,3 +124,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/reviews/review/user'
+
+# Registration settings, django-registration-redux module
+# TODO provide more production-ready approach, e.g. sending emails
+
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in
